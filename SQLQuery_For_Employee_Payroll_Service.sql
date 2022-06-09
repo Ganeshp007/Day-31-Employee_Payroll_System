@@ -26,3 +26,10 @@ select salary from employee_payroll where Name='Aman'   -- Display salaray of em
 
 --Retrieve Record of salary from table on basis Start_date 
 select Name,salary from employee_payroll where start_date Between '2018-01-01' and GETDATE()
+
+--UC6 => Adding Gender Attribute after Name Attribute in employee_payroll Table
+alter table employee_payroll 
+add gender char(1) NULL
+update employee_payroll set gender='M' where Name in('Ganesh Potdar','Aman','Mahesh','Dinesh','Abhishek')
+update employee_payroll set gender='F' where Name in('Komal')
+select * from employee_payroll  
