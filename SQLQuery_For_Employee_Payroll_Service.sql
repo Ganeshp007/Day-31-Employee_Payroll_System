@@ -16,7 +16,9 @@ insert into employee_payroll values             -- INserting records in Table
 ('Mahesh','750000','2015-06-28'),
 ('Dinesh','550000','2015-11-18'),
 ('Komal','650000','2018-06-03'),
-('Abhishek','708000','2020-05-31')
+('Abhishek','708000','2020-05-31'),
+('Geeta','840000','2019-12-05','F'),
+('Nimisha','490000','2016-06-18','F')
 
 --UC4 => Retrieveing all records from table
 select * from employee_payroll             -- Retriving all the record from table table
@@ -33,3 +35,10 @@ add gender char(1) NULL
 update employee_payroll set gender='M' where Name in('Ganesh Potdar','Aman','Mahesh','Dinesh','Abhishek')
 update employee_payroll set gender='F' where Name in('Komal')
 select * from employee_payroll  
+
+--UC7 => Gets sum,avg,min,max Salary values Using Functions and Group by Gender 
+select Sum(salary) as "TotalSalary",gender from employee_payroll group by gender;
+select Avg(salary) as "AverageSalary",gender from employee_payroll group by gender;
+select Min(salary) as "MinimumSalary",gender from employee_payroll group by gender;
+select Max(salary) as "MaximumSalary",gender from employee_payroll group by gender;
+select count(salary) as "CountSalary",gender from employee_payroll group by gender;
