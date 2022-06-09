@@ -14,4 +14,4 @@ insert into employee_payroll values             -- INserting records in Table
 ('Aman','800000','2021-05-30'),
 ('Mahesh','750000','2015-06-28')
 
-select * from employee_payroll                  -- Displaying record in table
+select * from employee_payroll                  -- Retriving all the record from table table and Display them
